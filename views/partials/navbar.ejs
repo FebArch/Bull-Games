@@ -1,0 +1,63 @@
+<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">Bull Games</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mx-auto mb-lg-0">
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="/explore">Explore</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="/news">News</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="/faq">FAQ</a>
+          </li>        
+          <li class="nav-item mx-4">
+            <a class="nav-link active" aria-current="page" href="/about">About</a>
+          </li>        
+        </ul>
+  
+        <div class="btn-group ">
+          <button type="button" class="btn btn-warning dropdown-toggle mx-3" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            Search
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end" style="width: 25vw;">
+            <form class="d-flex p-2" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-warning" type="submit">Search</button>
+            </form>
+          </ul>
+        </div>
+  
+        <% if (locals.user) { %>
+          <div class="d-flex mx-3">
+          <div class="btn-group mx-2 me-1">
+            <button type="button" class="btn px-3 btn-warning dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              <%= user.username %>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end p-2 mx-2">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Manage</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <% } else {%>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mx-3">
+          <a href="/signup"><button class="btn btn-outline-warning me-md-2" type="button">Signup</button></a>
+          <a href="/login"><button class="btn btn-warning" type="button">Login</button></a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  
+  

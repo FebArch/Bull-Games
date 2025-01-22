@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum userRole{
+  admin
+  user
+}
+
+model Users{
+  user_id Int @id @default(autoincrement())
+  username String
+  email String @unique
+  salt Bytes
+  password String
+  role userRole @default(user)
+
+  followedGames Games[] @relation("GameFollowers")
+  // wishlist Games[]
+}
+
+
+model Games{
+  game_id Int @id @default(autoincrement())
+  gameName String @unique
+  gameDesc String @default("No Description.....")
+  publisher String
+  releaseDate DateTime
+  price Int
+  storyline String @default("No Storyline.....")
+  rating Int?
+  specification String
+  genres String[]
+  coverImgUrl String
+  followers Users[] @relation("GameFollowers")  // can use any name instead of GameFollowers
+}

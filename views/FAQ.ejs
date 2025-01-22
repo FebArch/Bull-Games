@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bull Games - Store</title>
+    <%- include('./partials/head.ejs') %>
+    <style>
+    
+
+        /* Overlay for the accordion */
+        .accordion-container {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 100%; /* Full width of the viewport */
+            max-width: 1200px; /* Optional: max width for large screens */
+        }
+
+        /* Accordion styles */
+        .accordion-button {
+            outline: none;
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            /* border: 1px solid #444; Dark border */
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #555; /* Lighter dark color for opened */
+            color: #ffcc00; /* Yellow text for opened */
+            /* border-color: #ffcc00; Yellow border */
+        }
+
+        .accordion-item  {
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        .accordion-body {
+            background-color: #222; /* Dark body background */
+            color: #ccc; /* Lighter text color */
+            border: none;
+        }
+
+        /* Ensure the accordion has enough spacing and padding */
+        .accordion-button:focus {
+            /* box-shadow: 0 0 0 0.25rem rgba(255, 204, 0, 0.5); Optional: yellow focus glow */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+    <h1 class="text-center my-4">Frequently Asked Questions</h1>
+        <hr class="w-75 d-block mx-auto border-2 opacity-50">
+
+    <div class="container my-5">
+        
+    <div class="container accordion-container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                    1. What types of games does Bull Games offer?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    At Bull Games, we offer a diverse collection of games, including action, adventure, RPGs, strategy, sports, and simulation genres. Whether you're a casual player or a hardcore gamer, we've got something for you!
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    2. Are the games on Bull Games available on multiple platforms?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <strong>Yes! The games we offer are available on various platforms, including PC, PlayStation, Xbox, and Nintendo Switch. Be sure to check the game's page to verify its platform compatibility before purchasing.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    3. Can I get a refund for a game I purchased?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Bull Games offers refunds within 14 days of purchase if the game hasn't been downloaded or activated. If you are eligible for a refund, please reach out to our support team, and we’ll assist you with the process.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                    4. How can I stay updated on the latest releases and news from Bull Games?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Bull Games offers refunds within 14 days of purchase if the game hasn't been downloaded or activated. If you are eligible for a refund, please reach out to our support team, and we’ll assist you with the process.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                    5. How do I redeem an activation key from Bull Games?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    After purchasing a game with an activation key, you'll receive an email with the key. To redeem it, visit the relevant platform (Steam, PlayStation, etc.), and enter the key in the "Redeem Code" section of the platform's store.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    6. Does Bull Games offer multiplayer or online features?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Yes! Many of our games include multiplayer modes, whether online or local. You can check the game's page for detailed information about its multiplayer capabilities and any additional online features or services.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                     7. Can I pre-order games on Bull Games?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Yes, Bull Games allows pre-orders for upcoming titles. Pre-ordering guarantees you'll get the game as soon as it's released, and you might also receive exclusive in-game items or early access bonuses. Check the specific game page for pre-order details.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" >
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+                    8. How can I contact Bull Games customer support?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    If you need assistance with a game purchase, technical issues, or account-related questions, our customer support team is here to help. You can reach us via email, live chat, or through our support page. We aim to respond within 24-48 hours.
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+    </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>

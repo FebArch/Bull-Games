@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bull Games - Store</title>
+    <%- include('./partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+        <h1 class="text-center my-4">Publish Your Game</h1>
+        <hr class="w-75 d-block mx-auto border-2 opacity-50">
+
+
+        <div class="container my-4">
+            <form class="row g-3" method="post" action="/explore/upload" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <label for="gameName" required class="form-label">Game Title</label>
+                    <input type="text" name="gameName"
+                        class="form-control  bg-dark text-warning border border-warning-subtle" id="gameName">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="publisher" required class="form-label">Publisher</label>
+                    <input type="text" name="publisher"
+                        class="form-control  bg-dark text-warning border border-warning-subtle" id="publisher">
+                </div>
+
+                <div class="col-12">
+                    <label for="gameDesc" class="form-label">Game Description</label>
+                    <textarea name="gameDesc" class="form-control  bg-dark text-warning border border-warning-subtle"
+                        id="gameDesc" style="height: 15vh;"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="storyline" class="form-label">Storyline</label>
+                    <textarea name="storyline" class="form-control  bg-dark text-warning border border-warning-subtle"
+                        id="storyline" style="height: 15vh;"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="storyline" class="form-label">Specifications</label>
+                    <textarea name="specification"
+                        class="form-control bg-dark text-warning border border-warning-subtle" id="specifications"
+                        style="height: 15vh;"></textarea>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="releaseDate" required class="form-label">Release Date</label>
+                    <input type="date" class="form-control  bg-dark text-warning border border-warning-subtle"
+                        name="releaseDate" id="releaseDate">
+                </div>
+
+                <div class="col-md-2 ">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input type="text" required
+                            class="form-control bg-dark text-warning border border-warning-subtle" name="price"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+
+                <div class="col-md-2 ">
+                    <label for="coverImg" class="form-label">Cover Image</label>
+                    <input type="file" name="coverImg" id="coverImg" required
+                        class="form-control  bg-dark text-warning border border-warning-subtle" style="width: 8vw;">
+                </div>
+
+
+                <!-- Genres -->
+               <div class="container mt-4 bg-dark rounded">
+                <div class="row gap-3 my-3">
+                    
+                    <div class="col-4 w-25">
+                        <label for="genres1" required class="form-label">Genres 1</label>
+                    <select id="genres1" name="genres1" class="p-2 form-select w-100 bg-dark text-warning">
+                        aria-label="Size 3 select example">
+                        <%- include('./partials/genres.ejs') %>
+                    </select>
+                    </div>
+                    
+                    <div class="col-4 w-25">
+                        <label for="genres2" required class="form-label">Genres 2</label>
+                    <select id="genres2" name="genres2" class="p-2 form-select w-100 bg-dark text-warning">
+                        aria-label="Size 3 select example">
+                        <%- include('./partials/genres.ejs') %>
+                    </select>
+                    </div>
+                    
+                    <div class="col-4 w-25">
+                        <label for="genres3" required class="form-label">Genres 3</label>
+                    <select id="genres3" name="genres3" class="p-2 form-select w-100 bg-dark text-warning">
+                        aria-label="Size 3 select example">
+                        <%- include('./partials/genres.ejs') %>
+                    </select>
+                    </div>
+
+                </div>
+               </div>
+
+
+
+                <div class="col-12">
+                    <button type="" class="btn btn-outline-warning" id="publish">Publish</button>
+                </div>
+            </form>
+        </div>
+
+
+        <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/script.ejs') %>
+
+                <!-- <script>
+                    const publish = document.querySelector('#publish')
+                    const adventure = document.querySelector('#adventure')
+                    adventure.addEventListener("checked", ()=>console.log(adventure.value))
+                </script> -->
+
+</body>
+
+</html>

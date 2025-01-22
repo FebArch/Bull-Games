@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <%- include('./partials/head.ejs') %>
+    
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    
+    <div class="container">
+        <h1 class="text-center my-3">Login</h1>
+        <hr>
+    </div>
+
+    <% if (locals.err) { %>
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                <%= err %>
+              </div>
+        </div>
+    <% } %>
+    
+    <!-- <h3 style="color: red;"> <%= locals.err %> </h3> -->
+    
+    <div class="container">
+        <form action="/login" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" name="email" required id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" required id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-success mt-3 d-block mx-auto w-25 px-1">Login</button>
+            <a href="/signup" style="text-decoration: none;"><button type="button" class="mt-3 d-block btn-outline-success mx-auto btn">Signup</button></a>
+          </form>
+    </div>
+
+</form>
+<%- include('./partials/footer.ejs') %>
+<%- include('./partials/script.ejs') %>
+</body>
+</html>
