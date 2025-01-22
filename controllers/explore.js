@@ -2,7 +2,9 @@ const { PrismaClient } = require("@prisma/client")
 const prisma = new PrismaClient()
 
 async function handleExploreGetReq(req, res) {
-    return res.render('explore', {user: req.user})
+    const tenGames = await prisma.games.findMany({})
+    // console.log(tenGames)
+    return res.render('explore', {user: req.user, tenGames})
 }
 
 async function handleGetUploadAGame(req, res) {
@@ -17,7 +19,7 @@ async function handleUploadAGame(req, res) {
     } = req.body
 
     let genres = [genres1, genres2, genres3]
-
+    // console.log()
     try {
         let gameData = await prisma.games.create({
             data:{ 
@@ -25,7 +27,7 @@ async function handleUploadAGame(req, res) {
                 publisher, releaseDate: new Date(releaseDate), price: parseInt(price),
                 storyline, specification,
                 genres,
-                coverImgUrl: req.file.path
+                coverImgUrl: `/${req.body.gameName}/${req.file.filename}`
             }
         })
     } catch (error) {

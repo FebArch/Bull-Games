@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bull Games - Store</title>
+    <%- include('./partials/head.ejs') %>
+        <style>
+            .bg-img {
+                height: 100vh;
+                width: 100vw;
+                background-image: url('/default/about.jpg');
+            }
+
+            .filter-brightness {
+                filter: brightness(50%);
+            }
+
+            .f1 {
+                font-size: 5rem;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+        <div
+            class="container-fluid border border-secondary p-5 d-flex justify-content-center align-items-center bg-img">
+            <div class="container p-4">
+                <h1 class="text-center f1">Anas Arif Baig</h1>
+                <h4 class="text-center text-info">Full Stack Developer</h4>
+                <hr class="d-block mx-auto border-2 opacity-50">
+                <pre class="container fs-6 text-white text-center">
+Owner of Bull Games
+Studying Mechatronics Engineering and Software Development.
+Built several projects independently and seeking a role to learn from experienced team
+members.
+                </pre>
+                <button type="button" class="btn d-block mx-auto btn-outline-warning">Hire Me!</button>
+
+            </div>
+            <div class="container">
+            </div>
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

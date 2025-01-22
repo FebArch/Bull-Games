@@ -8,7 +8,35 @@
 <body>
     <%- include('./partials/navbar.ejs') %>
 
-      
+    <div class="container-fluid my-4 p-3 d-flex">
+        <div class="container w-75 border border-secondary">
+            <div class="row row-cols-1 p-3 row-cols-md-3 g-4">
+
+                <% if (locals.tenGames) { %>
+                 <% tenGames.forEach(game => { %>
+                  
+
+                    <div class="col">
+                        <div class="card text-bg-dark" style="width: 18rem;">
+                            <img src="<%= game.coverImgUrl %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h4 class="card-title text-warning"><%= game.gameName %></h4>
+                              <p class="card-text"><%= game.gameName.slice(0,20) %></p>
+                              <a href="#" class="btn btn-dark">View</a>
+                            </div>
+                          </div>
+                    </div>
+
+
+
+                 <% }) %>
+                <% } %>
+
+              </div>
+        </div>
+        <div class="container w-25 border border-secondary"></div>
+        
+    </div>
 
     <%- include('./partials/footer.ejs') %>
     <%- include('./partials/script.ejs') %>
